@@ -1,0 +1,723 @@
+﻿{
+  "Scenario": "Classification",
+  "DataSource": {
+    "Type": "TabularFile",
+    "Version": 1,
+    "FilePath": "D:\\Pie\\Dev\\Hospify_ML\\Hospify_ML\\Dataset\\Diabetes Health Indicators Dataset\\diabetes_012_health_indicators_BRFSS2015.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Diabetes_012",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "HighBP",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "HighChol",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "CholCheck",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "BMI",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Smoker",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Stroke",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "HeartDiseaseorAttack",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "PhysActivity",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Fruits",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Veggies",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "HvyAlcoholConsump",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "AnyHealthcare",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "NoDocbcCost",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "GenHlth",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "MentHlth",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "PhysHlth",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "DiffWalk",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Sex",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Age",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Education",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Income",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.38542913128544692,
+        "RuntimeInSeconds": 39.715,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e6 * e9",
+          "e0": {
+            "OutputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ],
+            "InputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "OutputColumnName": "Diabetes_012",
+            "InputColumnName": "Diabetes_012",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e6": {
+            "L1Regularization": 3.83221555,
+            "L2Regularization": 1.40777814,
+            "LabelColumnName": "Diabetes_012",
+            "FeatureColumnName": "Features"
+          },
+          "e9": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.38518537384956536,
+        "RuntimeInSeconds": 29.271,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e6 * e9",
+          "e0": {
+            "OutputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ],
+            "InputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "OutputColumnName": "Diabetes_012",
+            "InputColumnName": "Diabetes_012",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e6": {
+            "L1Regularization": 0.61738354,
+            "L2Regularization": 0.520268261,
+            "LabelColumnName": "Diabetes_012",
+            "FeatureColumnName": "Features"
+          },
+          "e9": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsLogisticRegressionOva",
+        "Score": 0.38516940205869271,
+        "RuntimeInSeconds": 20.534,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e5 * e9",
+          "e0": {
+            "OutputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ],
+            "InputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "OutputColumnName": "Diabetes_012",
+            "InputColumnName": "Diabetes_012",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e5": {
+            "L1Regularization": 1.61973858,
+            "L2Regularization": 1.92208552,
+            "LabelColumnName": "Diabetes_012",
+            "FeatureColumnName": "Features"
+          },
+          "e9": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.38513825959750408,
+        "RuntimeInSeconds": 26.513,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e6 * e9",
+          "e0": {
+            "OutputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ],
+            "InputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "OutputColumnName": "Diabetes_012",
+            "InputColumnName": "Diabetes_012",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e6": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "Diabetes_012",
+            "FeatureColumnName": "Features"
+          },
+          "e9": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsLogisticRegressionOva",
+        "Score": 0.38504363053310336,
+        "RuntimeInSeconds": 21.368,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e5 * e9",
+          "e0": {
+            "OutputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ],
+            "InputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "HighBP",
+              "HighChol",
+              "CholCheck",
+              "BMI",
+              "Smoker",
+              "Stroke",
+              "HeartDiseaseorAttack",
+              "PhysActivity",
+              "Fruits",
+              "Veggies",
+              "HvyAlcoholConsump",
+              "AnyHealthcare",
+              "NoDocbcCost",
+              "GenHlth",
+              "MentHlth",
+              "PhysHlth",
+              "DiffWalk",
+              "Sex",
+              "Age",
+              "Education",
+              "Income"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "OutputColumnName": "Diabetes_012",
+            "InputColumnName": "Diabetes_012",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e5": {
+            "L1Regularization": 0.260945648,
+            "L2Regularization": 0.710339248,
+            "LabelColumnName": "Diabetes_012",
+            "FeatureColumnName": "Features"
+          },
+          "e9": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ReplaceMissingValues",
+      "e1": "Concatenate",
+      "e2": "MapValueToKey",
+      "e3": "FastTreeOva",
+      "e4": "FastForestOva",
+      "e5": "LbfgsLogisticRegressionOva",
+      "e6": "LbfgsMaximumEntropyMulti",
+      "e7": "SdcaMaximumEntropyMulti",
+      "e8": "SdcaLogisticRegressionOva",
+      "e9": "MapKeyToValue"
+    },
+    "Schema": "e0 * e1 * e2 * (e3 + e4 + e5 + e6 + e7 + e8) * e9",
+    "MetricName": "MacroAccuracy",
+    "ModelFilePath": "D:\\Pie\\Dev\\Hospify_ML\\Hospify_ML\\Hospify_ML\\DiabetesModel.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 4,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Type": "ClassificationTrainingOption",
+    "TrainingTime": 600,
+    "LabelColumn": "Diabetes_012",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "TrainValidateSplitValidationOption",
+      "SplitRatio": 0.2
+    }
+  }
+}

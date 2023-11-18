@@ -1,0 +1,6 @@
+@Hospify_app.Server_HostAddress = http://localhost:5255
+
+GET {{Hospify_app.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
